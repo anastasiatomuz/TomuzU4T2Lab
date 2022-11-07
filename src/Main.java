@@ -133,12 +133,7 @@ public class Main {
         }
 
         System.out.println("-----------------------------------");
-        String print = "Print Me!";
 
-        for(int i = 0; i <= print.length(); i++)
-        {
-            System.out.println(print.substring(i, i + 1));
-        }
 
         System.out.println("-----------------------------------");
         StringLoops loops = new StringLoops();

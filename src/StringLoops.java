@@ -1,3 +1,4 @@
+import java.util.Locale;
 
 public class StringLoops
 {
@@ -18,7 +19,15 @@ public class StringLoops
         DO THIS WITH A FOR LOOP!
       */
     public int countCharacters(String character, String searchString) {
-        /* to be implemented */
+        String newStr = searchString.toLowerCase();
+        int count = 0;
+        String chara = character.toLowerCase();
+        for (int i = 0; i < newStr.length(); i ++){
+            if (newStr.substring(i, i + 1).equals(chara) ){
+                count ++;
+            }
+        }
+        return count;
     }
 
     /* Returns the original string reversed
@@ -28,7 +37,11 @@ public class StringLoops
      - if origString = "Apples and bananas" this method returns "sananab dna selppA"
     */
     public String reverseString(String origString) {
-        /* to be implemented */
+        String newStr = "";
+        for (int i = origString.length(); i >= 0; i--){
+            newStr += origString.substring(i, i + 1);
+        }
+        return newStr;
     }
 }
 
