@@ -143,5 +143,8 @@ public class Main {
         System.out.println(loops.reverseString("hello!"));
         System.out.println(loops.reverseString("Apples and bananas"));
 
+        System.out.println("-----------------------------------");
+        System.out.println(loops.reverseString2("hello!"));
+        System.out.println(loops.reverseString2("Apples and bananas"));
     }
 }

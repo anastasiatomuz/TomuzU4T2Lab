@@ -38,11 +38,22 @@ public class StringLoops
     */
     public String reverseString(String origString) {
         String newStr = "";
-        for (int i = origString.length(); i >= 0; i--){
+        for (int i = origString.length() - 1; i >= 0; i--){
             newStr += origString.substring(i, i + 1);
         }
         return newStr;
     }
+
+
+    public String reverseString2(String origString) {
+        String newStr = "";
+        for (int i = 0; i < origString.length(); i++){
+            String character = origString.substring(i,i+1);
+            newStr = character + newStr;
+        }
+        return newStr;
+    }
+
 }
 
 
