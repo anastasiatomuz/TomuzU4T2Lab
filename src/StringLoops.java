@@ -173,9 +173,9 @@ public class StringLoops
      - myString = "BaaBaaaB", return false
     */
     public boolean isPalindrome(String myString) {
-        StringLoops strNoSpace = myString.replace(" ", "");
-        String strReversed = reverseString(myString);
-        return strReversed.equals(myString);
+        String strNoSpace = myString.replace(" ", "");
+        String strReversed = reverseString(strNoSpace);
+        return strReversed.equals(strNoSpace);
     }
 
 
