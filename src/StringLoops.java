@@ -54,6 +54,29 @@ public class StringLoops
         return newStr;
     }
 
+    public int countString(String searchString, String origString) {
+        /* to be implemented */
+        int count = 0;
+        String str = "";
+        int searchLength = searchString.length();
+        while (origString.indexOf(searchString) != -1) {
+            count++;
+            origString = origString.substring(0, origString.indexOf(searchString)) + origString.substring(origString.indexOf(searchString) + 1);
+
+        }
+        return count;
+    }
+
+    public String replaceCharacter(String searchChar, String origStr, String replaceChar){
+        while (origStr.contains(searchChar)){
+            origStr = origStr.substring(0,origStr.indexOf(searchChar)) + replaceChar +
+                    origStr.substring(origStr.indexOf(searchChar) + 1);
+        }
+        return origStr;
+    }
+
+
+
     /* Returns a String with all instances of "searchString" removed from "origString";
        matches should be case sensitive (i.e. no need to worry about lowercase)
 
@@ -132,6 +155,16 @@ public class StringLoops
         }
     }
 
+    public void multiPrint(String toPrint, int num) {
+        System.out.print("[ ");
+        for (int i = num; i > 0; i--) {
+            System.out.print(toPrint + " ");
+        }
+        System.out.print("]" + '\n');
+
+    }
+
+
     /* Returns true if myString is a palindrome, i.e. the characters read the same
     forwards and backwards, and false otherwise. Don't worry about case.
     NOTE!  Spaces should be disregarded when determining if it's a palindrome.
@@ -173,7 +206,7 @@ public class StringLoops
      - myString = "BaaBaaaB", return false
     */
     public boolean isPalindrome(String myString) {
-        String strNoSpace = myString.replace(" ", "");
+        String strNoSpace = replaceCharacter(" ", myString, "");
         String strReversed = reverseString(strNoSpace);
         return strReversed.equals(strNoSpace);
     }
